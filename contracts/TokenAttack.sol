@@ -1,7 +1,6 @@
 //SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 interface Token{
   function balanceOf(address owner) external view returns (uint);
   function transfer(address to, uint value) external returns (bool);
