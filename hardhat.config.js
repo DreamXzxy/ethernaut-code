@@ -2,6 +2,7 @@ require("dotenv").config();
 require("@nomiclabs/hardhat-waffle");
 require("hardhat-gas-reporter");
 require("@nomiclabs/hardhat-etherscan");
+require("@nomiclabs/hardhat-web3");
 
 const { setGlobalDispatcher, ProxyAgent } = require('undici');
 const proxyAgent = new ProxyAgent('http://127.0.0.1:6152');
@@ -55,6 +56,15 @@ module.exports = {
     compilers: [
       {
         version: "0.8.4",
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 1000,
+          },
+        },
+      },
+      {
+        version: "0.6.0",
         settings: {
           optimizer: {
             enabled: true,
